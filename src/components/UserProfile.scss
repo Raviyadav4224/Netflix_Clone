@@ -1,0 +1,29 @@
+.cover {
+  height: 100vh;
+  background-image: url("https://wallpapers.com/images/hd/blended-red-and-black-avpcjvk4pduwd90b.jpg");
+  > div {
+    > button {
+      padding: 0.6rem;
+      outline: none;
+      border-color: white;
+      border-radius: 5px;
+      font-size: 1rem;
+      background-color: #e50914;
+      margin-left: 1rem;
+      transition: .5s;
+      color: black;
+      cursor: pointer;
+      &:hover {
+        background-color: #e50914;
+        transform: scale(1.15);
+      }
+    }
+  }
+}
+.userDetails {
+  border: 2px solid red;
+  position: relative;
+  height: 40rem;
+  width: 40rem;
+  margin: auto;
+}

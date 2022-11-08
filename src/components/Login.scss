@@ -47,4 +47,13 @@ $bg: rgba(16, 16, 16);
     gap: 0.4rem;
     align-items: center;
   }
+  > p {
+    text-align: center;
+    > a {
+      color: #e50914;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }

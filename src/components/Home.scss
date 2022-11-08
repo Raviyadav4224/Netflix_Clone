@@ -1,9 +1,6 @@
 $bg: rgba(16, 16, 16);
 
-.banner {
-  height: 400px;
-  background-color: $bg;
-}
+
 .Row {
   padding: 1rem;
   background-color: $bg;
@@ -53,6 +50,8 @@ $bg: rgba(16, 16, 16);
 }
 
 .banner {
+  height: 400px;
+  background-color: $bg;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -101,8 +100,10 @@ $bg: rgba(16, 16, 16);
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      transition: .3s;
       &:hover {
         opacity: 0.8;
+        transform: translateY(-4px) scale(1.1);
       }
       >svg{
         fill:black;

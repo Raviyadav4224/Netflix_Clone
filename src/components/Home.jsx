@@ -8,7 +8,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import Row from "./Row";
 const apiKey = process.env.REACT_APP_API_KEY;
 const url = "https://api.themoviedb.org/3";
-const imgUrl = "https://image.tmdb.org/t/p/original";
+const imgUrl = "https://image.tmdb.org/t/p/w500";
 const Home = () => {
   const [top_rated, set_top_rated] = useState([]);
   const [popular, set_popular] = useState([]);
@@ -45,13 +45,13 @@ const Home = () => {
         <div
           className="banner"
           style={{
-            backgroundImage: nowPlaying[0]
-              ? `url(${`${imgUrl}/${nowPlaying[0].poster_path}`})`
+            backgroundImage: top_rated[0]
+              ? `url(${`${imgUrl}/${top_rated[0].poster_path}`})`
               : "rgb(16, 16, 16)",
           }}
         >
-          <h1>{nowPlaying[0] ? nowPlaying[0].original_title : null}</h1>
-          <p>{nowPlaying[0] ? nowPlaying[0].overview : null}</p>
+          <h1>{top_rated[0] ? top_rated[0].original_title : null}</h1>
+          <p>{top_rated[0] ? top_rated[0].overview : null}</p>
           <div>
             <button>
               <BiPlay />
@@ -70,7 +70,7 @@ const Home = () => {
         <Row title="Now Playing" arr={nowPlaying} />
         <div className="genres">
           {genres.map((item) => (
-            <Link key={item.id} to={`/genre/id`}>
+            <Link key={item.id} to={`/genre/${item.id}`}>
               {item.name}
             </Link>
           ))}

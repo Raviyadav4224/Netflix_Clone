@@ -3,14 +3,17 @@ import "./Header.scss";
 import logo from "../Logonetflix.png";
 import { Link, useNavigate } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
+import { useSelector } from "react-redux";
 const Header = () => {
-const navigate=useNavigate()
-  const handleClick=()=>{
-    navigate('/')
-  }
+  const { isAuthenticated } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/");
+  };
   return (
     <nav className="header">
-      <img src={logo} alt="logo" onClick={handleClick}/>
+      <img src={logo} alt="logo" onClick={handleClick} />
 
       <div>
         <Link to="/tvshows">Tv Shows</Link>
@@ -19,7 +22,15 @@ const navigate=useNavigate()
         <Link to="/myList">My List</Link>
       </div>
       <BiSearch />
-      <button><Link to='/login'>Login</Link></button>
+      {isAuthenticated ? (
+        <Link to="/me">
+          <CgProfile />
+        </Link>
+      ) : (
+        <Link to="/login">
+          <CgProfile />
+        </Link>
+      )}
     </nav>
   );
 };
