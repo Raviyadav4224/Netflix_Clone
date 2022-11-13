@@ -1,7 +1,10 @@
 $bg: rgba(16, 16, 16);
 .cover {
-  height: 600px;
+  height: 100vh;
+  width: 100vw;
   padding: 1rem;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .login {
   height: 34rem;
@@ -11,11 +14,9 @@ $bg: rgba(16, 16, 16);
   margin: auto;
   padding: 3rem;
   background-color: $bg;
-  // opacity: .5;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-
   > h1 {
     font-size: 2.5rem;
     font-weight: 100;
@@ -55,5 +56,12 @@ $bg: rgba(16, 16, 16);
         text-decoration: underline;
       }
     }
+  }
+}
+//Register.jsx styling
+
+.profilePic {
+  > input {
+    font-size: 1rem;
   }
 }

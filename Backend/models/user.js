@@ -32,6 +32,16 @@ const netflixSchema=new mongoose.Schema({
             default: 0
         }
     }],
+    avatar: {
+        public_id: {
+          type: String,
+          required: true,
+        },
+        url: {
+          type: String,
+          required: true,
+        },
+    },
     resetPasswordToken: String,
     resetPasswordExpire: Date
 })

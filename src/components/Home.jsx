@@ -16,6 +16,7 @@ const Home = () => {
   const [upcoming, set_Upcoming] = useState([]);
   const [genres, set_genres] = useState([]);
   useEffect(() => {
+    document.title='Netflix India - Watch TV Shows Online, Watch Movies Online'
     const getAllGenre = async () => {
       const {
         data: { genres },

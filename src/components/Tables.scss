@@ -1,0 +1,34 @@
+.adminOnly {
+    margin: auto;
+    >span{
+      margin-bottom: 1rem;
+      color: green;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    > table {
+      border: 2px solid rgb(61, 61, 61);
+      width: 60%;
+      text-align: center;
+      border-radius: 10px;
+      > tr {
+        > th {
+          text-align: center;
+          color: #e50914;
+          padding: 0.5rem;
+        }
+        > td {
+          text-align: center;
+          padding: 0.5rem;
+          color: white;
+          > svg {
+            font-size: 1.5rem;
+            &:hover {
+              fill: #e50914;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }

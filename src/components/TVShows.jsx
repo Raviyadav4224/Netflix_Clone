@@ -7,6 +7,7 @@ const TVShows = () => {
   const [recommedation, set_recommedation] = useState([]);
 
   useEffect(() => {
+    document.title='Watch TV Shows Online'
     const getPopularTvShows = async () => {
       const {
         data: { results },

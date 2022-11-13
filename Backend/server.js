@@ -5,6 +5,7 @@ import errorHandler from './middlewares/errorHandler.js'
 import {config} from 'dotenv'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
+import cloudinary from 'cloudinary'
 config({path:'./config/config.env'})
 const app=express()
 app.use(express.json())
@@ -20,7 +21,11 @@ const PORT= process.env.PORT || 4000
 connectDB()
 
 //middlewares
-
+cloudinary.v2.config({
+    cloud_name:process.env.CLOUDINRY_NAME,
+    api_key:process.env.CLOUDINRY_API_KEY,
+    api_secret:process.env.CLOUDINRY_API_SECRET
+})
 //Routes
 app.use("/netflixBckEnd/v1",userRoute)
 

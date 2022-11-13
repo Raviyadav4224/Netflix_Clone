@@ -6,17 +6,52 @@ import TVShows from "./components/TVShows";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import UserProfile from "./components/UserProfile";
+import toast, { Toaster } from "react-hot-toast";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 function App() {
+  const dispatch = useDispatch();
+  const { error, message, isAuthenticated ,loading} = useSelector(
+    (state) => state.user
+  );
+  console.log(`Error is ${error} & message is ${message}`);
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+      dispatch({ type: "clearError" });
+    }
+    if (message) {
+      toast.success(message);
+      dispatch({ type: "clearMessage" });
+    }
+  }, [dispatch, error, message]);
   return (
     <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tvshows" element={<TVShows />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route
+          path="/login"
+          element={<Login isAuthenticated={isAuthenticated} />}
+        />
+        <Route
+          path="/register"
+          element={<Register isAuthenticated={isAuthenticated} loading={loading}/>}
+        />
         <Route path="/me" element={<UserProfile />} />
       </Routes>
+      <Toaster
+        toastOptions={{
+          success: {
+            duration: 2000,
+          },
+          error: {
+            duration: 4000,
+          },
+        }}
+      />
     </BrowserRouter>
   );
 }
