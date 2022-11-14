@@ -1,20 +1,20 @@
 import { User } from "../models/user.js";
 import getDataUri from "../utils/dataURI.js";
 import ErrorResponse from "../utils/errorResponse.js";
-import cloudinary from 'cloudinary'
+import cloudinary from "cloudinary";
 export const getAllUserDetails = async (req, res) => {
   const userInfo = await User.find();
   const count = await User.count();
   res.status(201).json({
     success: true,
     count,
-    user:userInfo,
+    user: userInfo,
   });
 };
 export const getCurrentUserDetails = async (req, res) => {
   res.status(201).json({
     success: true,
-    user:req.user,
+    user: req.user,
   });
 };
 export const login = async (req, res, next) => {
@@ -53,27 +53,26 @@ export const logout = async (req, res, next) => {
 };
 export const register = async (req, res, next) => {
   const { username, email, password } = req.body;
-  const file=req.file;
-  console.log('File data is',file);
+  const file = req.file;
   try {
-    if(!username || !email || !password || !file){
-      return next(new ErrorResponse("Please enter all fields",400))
+    if (!username || !email || !password || !file) {
+      return next(new ErrorResponse("Please enter all fields", 400));
     }
     let user = await User.findOne({ email });
     if (user) {
       return next(new ErrorResponse("User already exists", 409));
     }
-    
-    const fileUri=getDataUri(file)
-    const mycloud=await cloudinary.v2.uploader.upload(fileUri.content)
+
+    const fileUri = getDataUri(file);
+    const mycloud = await cloudinary.v2.uploader.upload(fileUri.content);
     user = await User.create({
       username,
       email,
       password,
-      avatar:{
-        public_id:mycloud.public_id,
-        url:mycloud.secure_url
-      }
+      avatar: {
+        public_id: mycloud.public_id,
+        url: mycloud.secure_url,
+      },
     });
     sendToken(201, user, res);
   } catch (error) {
@@ -101,21 +100,21 @@ export const updateUserDetails = async (req, res, next) => {
     next(error);
   }
 };
-export const deleteUser=async (req,res,next)=>{
+export const deleteUser = async (req, res, next) => {
   try {
-    const user=await User.findById(req.params.id)
-    if(!user){
-      return next(new ErrorResponse("User Doesn't Exists"))
+    const user = await User.findById(req.params.id);
+    if (!user) {
+      return next(new ErrorResponse("User Doesn't Exists"));
     }
-    await user.remove()
+    await user.remove();
     res.status(200).json({
-      success:true,
-      message:"User deleted successfully"
-    })
+      success: true,
+      message: "User deleted successfully",
+    });
   } catch (error) {
-    next(error)
+    next(error);
   }
-}
+};
 
 const sendToken = (statusCode, user, res) => {
   const token = user.getSignedToken();
@@ -123,13 +122,13 @@ const sendToken = (statusCode, user, res) => {
     .status(statusCode)
     .cookie("token", token, {
       httpOnly: true,
-      expires: new Date(Date.now() + 10 * 60 * 1000),
+      expires: new Date(Date.now() + 30 * 60 * 1000),
       secure: true,
-      sameSite: "None"
+      sameSite: "None",
     })
     .json({
       success: true,
       token,
-      message:"Successful"
+      message: "Successful",
     });
 };
