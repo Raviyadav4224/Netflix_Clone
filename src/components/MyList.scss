@@ -1,0 +1,26 @@
+.myList {
+  color: black;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url("https://wallpapercave.com/wp/wp2789789.jpg");
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > div {
+        background-color: transparent;
+      > svg {
+        font-size: 1.5rem;
+        cursor: pointer;
+        &:hover {
+          fill: red;
+        }
+      }
+    }
+  }
+}

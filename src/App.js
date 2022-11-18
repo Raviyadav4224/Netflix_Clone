@@ -10,6 +10,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import MovieDetails from "./components/MovieDetails";
+import MyList from "./components/MyList";
 function App() {
   const dispatch = useDispatch();
   const { error, message, isAuthenticated ,loading} = useSelector(
@@ -41,6 +43,8 @@ function App() {
           element={<Register isAuthenticated={isAuthenticated} loading={loading}/>}
         />
         <Route path="/me" element={<UserProfile />} />
+        <Route path='/movie/:id' element={<MovieDetails/>}/>
+        <Route path='/myList' element={<MyList/>}/>
       </Routes>
       <Toaster
         toastOptions={{
