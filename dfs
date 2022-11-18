@@ -1,0 +1,35 @@
+[33mcommit 7c112d11da1511e4adaeca1338b4bbb50388ed30[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Ravi <raviyadav4224@gmail.com>
+Date:   Sat Nov 19 01:20:24 2022 +0530
+
+    Completed from My end will add more features in future
+
+[33mcommit 053bf3d25651c4a89760a0d4c9d11cc8521e9ea2[m
+Author: Ravi <raviyadav4224@gmail.com>
+Date:   Tue Nov 15 01:13:07 2022 +0530
+
+    fixed bugs in Backend
+
+[33mcommit ef10d6988f989afdd9ad1f8c098da8a6f091271a[m
+Author: Ravi <raviyadav4224@gmail.com>
+Date:   Mon Nov 14 01:39:56 2022 +0530
+
+    Added Cloudinary for User profilePic
+
+[33mcommit 3585d021d7fcc94c15e2d7b824a9d1e2cb0e19ca[m
+Author: Ravi <raviyadav4224@gmail.com>
+Date:   Wed Nov 9 02:25:43 2022 +0530
+
+    Added Backend with user model
+
+[33mcommit 5b7e22effa1cb62ca2c91da66a31530b2fb668c9[m
+Author: Ravi <raviyadav4224@gmail.com>
+Date:   Wed Nov 9 02:12:33 2022 +0530
+
+    Added Redux & Login facilty
+
+[33mcommit f946a81af1d717813ee4904617f5d827ea5c3ada[m
+Author: Ravi <raviyadav4224@gmail.com>
+Date:   Wed Nov 2 18:08:30 2022 +0530
+
+    Initial Commit
