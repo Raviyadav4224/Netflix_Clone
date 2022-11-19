@@ -1,0 +1,60 @@
+.moviePoster{
+    color: black;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    &::after{
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-color: black;
+        opacity: .2;
+    }
+    >h1,>p,>h3,>div{
+        z-index: 1;
+        width: 50%;
+        padding: 1rem;
+    }
+    >h3{
+        color: rgb(253, 208, 59);
+        font-size: 1.5rem;
+    }
+    >div{
+        display: flex;
+        flex-direction: column;
+    >a{
+        font-size: 1.5rem;
+        font-weight: bolder;
+        color: #a80a12;
+        display: inline-block;
+        &:hover{
+            color: #ff0b18;
+            text-decoration: underline;
+        }
+    }
+    > button {
+        padding: 0.8rem;
+        width: 200px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        margin-top: 1rem;
+        background-color:white;
+        color: black;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: .3s;
+        &:hover {
+          opacity: 0.8;
+          transform: translateY(-4px) scale(1.1);
+        }
+    }
+}
+}
