@@ -14,16 +14,16 @@ const Header = () => {
   };
   return (
     <>
-      <nav className="header">
+      <nav className="header ">
         <img src={logo} alt="logo" onClick={handleClick} />
 
-        <div>
+        <div className="active">
           <Link to="/tvshows">Tv Shows</Link>
           <Link to="/movies">Movies</Link>
           <Link to="/recentlyAdded">Recently Added</Link>
           <Link to="/myList">My List</Link>
         </div>
-        <BiSearch/>
+        <BiSearch />
         {isAuthenticated ? (
           <Link to="/me">
             <CgProfile />

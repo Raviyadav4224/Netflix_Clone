@@ -50,7 +50,7 @@ $bg: rgba(16, 16, 16);
 }
 
 .banner {
-  height: 400px;
+  min-height: 400px;
   background-color: $bg;
   background-size: cover;
   background-repeat: no-repeat;
@@ -75,7 +75,7 @@ $bg: rgba(16, 16, 16);
   > p {
     color: white;
     font-size: 3rem;
-    width: 50%;
+    min-width: 50%;
     z-index: 1;
     padding: 1rem;
   }

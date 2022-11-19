@@ -39,7 +39,7 @@ a {
     }
   }
   > svg {
-    font-size: 2rem;
+    font-size: 40px;
     margin-right: 2rem;
     cursor: pointer;
     transition: 0.3s;
@@ -70,12 +70,27 @@ a {
     justify-content: center;
     > svg {
       font-size: 1.5rem;
-      transition: .3s;
+      transition: 0.3s;
       cursor: pointer;
       &:hover {
         fill: #e50914;
         transform: scale(1.6);
       }
     }
+  }
+}
+
+.active {
+  display: block;
+}
+@media screen and (max-width: 862px) {
+  .header {
+    justify-content: space-between;
+    > svg {
+      display: none;
+    }
+  }
+  .active {
+    display: none;
   }
 }

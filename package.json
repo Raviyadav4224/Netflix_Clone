@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "author": "Ravi Kumar",
   "private": true,
-  "proxy": "https://Raviyadav4224.github.io/netflix_clone",
+  "proxy": "https://netflix-c-l-o-n-e.herokuapp.com/netflixBackEnd/v1/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",
     "@testing-library/jest-dom": "^5.16.5",
