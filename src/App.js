@@ -33,6 +33,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/netflix_clone" element={<Home />} />
         <Route path="/tvshows" element={<TVShows />} />
         <Route
           path="/login"
