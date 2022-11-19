@@ -1,10 +1,10 @@
 import axios from "axios";
-
+const url='https://netflix-c-l-o-n-e.herokuapp.com/netflixBckEnd/v1'
 export const register = (myForm) => async (dispatch) => {
   try {
     dispatch({ type: "registerRequest" });
     const { data } = await axios.post(
-      "http://127.0.0.1:3000/netflixBckEnd/v1/register",
+      `${url}/register`,
       myForm,
       { withCredentials: true }
     );
@@ -17,7 +17,7 @@ export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: "loginRequest" });
     const { data } = await axios.post(
-      "http://127.0.0.1:3000/netflixBckEnd/v1/login",
+      `${url}/login`,
       { email, password },
       { withCredentials: true }
     );
@@ -32,7 +32,7 @@ export const logout = () => async (dispatch) => {
   try {
     dispatch({ type: "loginRequest" });
     const { data } = await axios.get(
-      "http://127.0.0.1:3000/netflixBckEnd/v1/logout",
+      `${url}/logout`,
       { withCredentials: true }
     );
     dispatch({ type: "logOutSuccess", payload: data });
@@ -46,7 +46,7 @@ export const loadUser = () => async (dispatch) => {
     dispatch({ type: "loadUserRequest" });
 
     const { data } = await axios.get(
-      `http://127.0.0.1:3000/netflixBckEnd/v1/me`,
+      `${url}/me`,
       { withCredentials: true }
     );
     dispatch({ type: "loadUserSuccess", payload: data.user });
@@ -60,7 +60,7 @@ export const loadAllUsers = () => async (dispatch) => {
     dispatch({ type: "loadAllUsersRequest" });
 
     const { data } = await axios.get(
-      `http://127.0.0.1:3000/netflixBckEnd/v1/allusers`,
+      `${url}/allusers`,
       { withCredentials: true }
     );
     dispatch({ type: "loadAllUsersSuccess", payload: data.user });
@@ -73,7 +73,7 @@ export const deleteUser = (id) => async (dispatch) => {
     dispatch({ type: "deleteUserRequest" });
 
     const { data } = await axios.delete(
-      `http://127.0.0.1:3000/netflixBckEnd/v1/delete/${id}`,
+      `${url}/delete/${id}`,
       { withCredentials: true }
     );
     console.log("data in delete all user function", data);
