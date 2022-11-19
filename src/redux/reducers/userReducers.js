@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 
 export const userReducer = createReducer(
-  { myListItems: [] },
+  {},
   {
     loadUserRequest: (state) => {
       state.loading = true;
@@ -40,7 +40,7 @@ export const userReducer = createReducer(
       state.loading = false;
       state.error = action.payload;
     },
-
+    
     registerRequest: (state) => {
       state.loading = true;
     },
@@ -90,24 +90,6 @@ export const userReducer = createReducer(
     },
     clearMessage: (state) => {
       state.message = null;
-    },
-    addToMyListSuccess:(state)=>{
-      state.message="Added Successfully"
-    },
-    addToMyList: (state, action) => {
-      const movie = action.payload;
-      const movieExists = state.myListItems.find((i) => i.id === movie.id);
-      if (!movieExists) {
-        state.myListItems.push(movie);
-      }
-    },
-    removeFromMyList: (state, action) => {
-      const movieId = action.payload;
-      console.log('id is ',movieId);
-      state.myListItems = state.myListItems.filter((i) => i.id !== movieId);
-    },
-    removeFromMyListSuccess:(state)=>{
-      state.message="Removed Successfully"
     },
   }
 );

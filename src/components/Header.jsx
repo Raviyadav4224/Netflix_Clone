@@ -12,6 +12,7 @@ const Header = () => {
   const handleClick = () => {
     navigate("/");
   };
+
   return (
     <>
       <nav className="header">
@@ -23,7 +24,7 @@ const Header = () => {
           <Link to="/recentlyAdded">Recently Added</Link>
           <Link to="/myList">My List</Link>
         </div>
-        <BiSearch/>
+        <BiSearch />
         {isAuthenticated ? (
           <Link to="/me">
             <CgProfile />
