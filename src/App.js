@@ -32,7 +32,6 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/netflix_clone" element={<Home />} />
         <Route path="/tvshows" element={<TVShows />} />
         <Route
@@ -44,7 +43,7 @@ function App() {
           element={<Register isAuthenticated={isAuthenticated} loading={loading}/>}
         />
         <Route path="/me" element={<UserProfile />} />
-        <Route path='/movie/:id' element={<MovieDetails/>}/>
+        <Route path='netflix_clone/movie/:id' element={<MovieDetails/>}/>
         <Route path='/myList' element={<MyList/>}/>
       </Routes>
       <Toaster

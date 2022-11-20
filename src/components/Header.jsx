@@ -10,7 +10,7 @@ const Header = () => {
   const { isAuthenticated } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/");
+    navigate("/netflix_clone");
   };
   return (
     <>
