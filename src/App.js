@@ -36,7 +36,7 @@ function App() {
         <Route path="/tvshows" element={<TVShows />} />
         <Route
           path="/login"
-          element={<Login isAuthenticated={isAuthenticated} />}
+          element={<Login isAuthenticated={isAuthenticated} loading={loading}/>}
         />
         <Route
           path="/register"
