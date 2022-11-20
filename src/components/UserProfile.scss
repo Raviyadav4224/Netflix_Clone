@@ -39,3 +39,10 @@ $bg: rgba(16, 16, 16);
   width: 30rem;
   margin: auto;
 }
+
+
+@media screen and (max-width: 500px) {
+  .userDetails{
+    width: 100%;
+  }
+}

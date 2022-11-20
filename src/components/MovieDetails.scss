@@ -1,6 +1,7 @@
 .moviePoster{
     color: black;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: 100vw;
     box-sizing: border-box;
     background-size: cover;
