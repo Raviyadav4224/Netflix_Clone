@@ -15,7 +15,7 @@ const Register = ({ isAuthenticated, loading }) => {
   useEffect(() => {
     document.title = "Sign Up Now";
     if (isAuthenticated) {
-      navigate("/");
+      navigate("/netflix_clone");
     }
   }, [isAuthenticated, navigate]);
   const dispatch = useDispatch((state) => state.user);

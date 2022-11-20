@@ -24,7 +24,7 @@ const Login = ({ isAuthenticated, loading }) => {
   return (
     <>
       {isAuthenticated ? (
-        navigate("/")
+        navigate("/netflix_clone")
       ) : (
         <section>
           <div className="cover" style={{ backgroundImage: `url(${url})` }}>
