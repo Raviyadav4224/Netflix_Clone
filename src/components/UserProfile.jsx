@@ -40,7 +40,7 @@ const UserProfile = () => {
   }, [dispatch, userInfo.role, error, message]);
   const handleClick = () => {
     dispatch(logout());
-    navigate("/");
+    navigate("/netflix_clone");
   };
   return (
     <>
