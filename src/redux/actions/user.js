@@ -1,5 +1,5 @@
 import axios from "axios";
-const url='https://netflix-c-l-o-n-e.herokuapp.com/netflixBckEnd/v1'
+const url='https://netflixbackend.onrender.com/netflixBckEnd/v1'
 export const register = (myForm) => async (dispatch) => {
   try {
     dispatch({ type: "registerRequest" });
@@ -30,7 +30,7 @@ export const login = (email, password) => async (dispatch) => {
 export const logout = () => async (dispatch) => {
   dispatch({ type: "logOutRequest" });
   try {
-    dispatch({ type: "loginRequest" });
+    dispatch({ type: "logOutRequest" });
     const { data } = await axios.get(
       `${url}/logout`,
       { withCredentials: true }

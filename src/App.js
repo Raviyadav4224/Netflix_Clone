@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import MovieDetails from "./components/MovieDetails";
 import MyList from "./components/MyList";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const dispatch = useDispatch();
   const { error, message, isAuthenticated ,loading} = useSelector(
